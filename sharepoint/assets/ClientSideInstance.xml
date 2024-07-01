@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="SpfxApplicationCustomizerNavigate"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="95567864-0fe6-47ba-81d2-49318cd14ae2"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>
