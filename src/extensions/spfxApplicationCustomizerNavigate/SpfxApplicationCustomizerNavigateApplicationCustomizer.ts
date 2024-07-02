@@ -5,6 +5,7 @@ import {
 
 import * as strings from 'SpfxApplicationCustomizerNavigateApplicationCustomizerStrings';
 import { override } from '@microsoft/decorators';
+import { SearchPage } from './SearchPage';
 
 const LOG_SOURCE: string = 'SpfxApplicationCustomizerNavigateApplicationCustomizer';
 
@@ -42,6 +43,11 @@ export default class SpfxApplicationCustomizerNavigateApplicationCustomizer
     if (this.currentPage.toLowerCase() !== href.toLocaleLowerCase()) {
       this.currentPage = href.toLowerCase();
       this.log(`${from} - ${this.currentPage}`);
+
+      const searchPage = new SearchPage(this.currentPage);
+      if (searchPage.isSearchPage) {
+        console.log(searchPage);
+      }
     }
   }
 
