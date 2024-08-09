@@ -52,7 +52,7 @@ export default class SpfxApplicationCustomizerNavigateApplicationCustomizer
 
   private log(message: string) : void {
     // provide a consistent message format to filter in browser console
-    console.log(`${LOG_SOURCE} - ${(new Date()).toISOString()} - ${message}`)
+    console.log(`${this.LOG_SOURCE} - ${(new Date()).toISOString()} - ${message}`)
   }
 
 }
