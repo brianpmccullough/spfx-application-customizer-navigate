@@ -3,11 +3,8 @@ import {
   BaseApplicationCustomizer
 } from '@microsoft/sp-application-base';
 
-import * as strings from 'SpfxApplicationCustomizerNavigateApplicationCustomizerStrings';
 import { override } from '@microsoft/decorators';
 import { SearchPage } from './SearchPage';
-
-const LOG_SOURCE: string = 'SpfxApplicationCustomizerNavigateApplicationCustomizer';
 
 export interface ISpfxApplicationCustomizerNavigateApplicationCustomizerProperties {
   testMessage: string;
@@ -17,11 +14,13 @@ export interface ISpfxApplicationCustomizerNavigateApplicationCustomizerProperti
 export default class SpfxApplicationCustomizerNavigateApplicationCustomizer
   extends BaseApplicationCustomizer<ISpfxApplicationCustomizerNavigateApplicationCustomizerProperties> {
 
+  private LOG_SOURCE: string = SpfxApplicationCustomizerNavigateApplicationCustomizer.name;
+
   private currentPage : string = '';
 
   public onInit(): Promise<void> {
     this.log('onInit');
-    Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+    Log.info(this.LOG_SOURCE, `Initialized ${SpfxApplicationCustomizerNavigateApplicationCustomizer.name}`);
 
     this.context.application.navigatedEvent.add(this, () => {
       this.changeLocation(window.location.href, "navigatedEvent");
